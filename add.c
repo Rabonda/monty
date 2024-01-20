@@ -5,28 +5,28 @@
  * @counter: line_number
  * Return: no return
 */
-void f_add(stack_t **head, unsigned int counter)
+void m_add(stack_t **h, unsigned int line_number);
 {
-	stack_t *h;
-	int len = 0, aux;
+	stack_t *head;
+	int stack_len = 0, auxilary;
 
-	h = *head;
-	while (h)
+	head = *h;
+	while (head)
 	{
-		h = h->next;
-		len++;
+		head = head->next;
+		stack_len++;
 	}
-	if (len < 2)
+	if (stack_len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->n + h->next->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	head = *h;
+	auxilary = head->n + head->next->n;
+	head->next->n = auxilary;
+	*h = head->next;
+	free(head);
 }
