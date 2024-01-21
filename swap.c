@@ -7,7 +7,7 @@
  *
  * void function: swaps the top two elements of the stack.
  */
-void m_swap(stack_t **h, unsigned int line_number);
+void m_swap(stack_t **h, unsigned int line_number)
 {
 	stack_t *temporary;
 
