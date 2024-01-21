@@ -7,26 +7,19 @@
 */
 void m_add(stack_t **h, unsigned int line_number)
 {
-	stack_t *head;
-	int stack_len = 0, auxilary;
+	stack_t *temporary;
 
-	head = *h;
-	while (head)
-	{
-		head = head->next;
-		stack_len++;
-	}
-	if (stack_len < 2)
+	if (h == NULL || *h == NULL || ((*h)->next) == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*h);
+		free_stack_t(*h);
+
 		exit(EXIT_FAILURE);
 	}
-	head = *h;
-	auxilary = head->n + head->next->n;
-	head->next->n = auxilary;
-	*h = head->next;
-	free(head);
+
+	temporary = *h;
+	*h = (*h)->next;
+	(*h)->n += temporary->n;
+	(*h)->prev = NULL;
+	free(temporary);
 }
