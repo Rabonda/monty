@@ -10,6 +10,6 @@ void m_pall(stack_t **h, unsigned int line_number)
 	(void)(line_number);
 
 	if (*h && h)
-		for (stack_t *temporary = *head; temporary; temporary = temporary->next)
+		for (stack_t *temporary = *h; temporary; temporary = temporary->next)
 			printf("%d\n", temporary->n);
 }
