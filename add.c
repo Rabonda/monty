@@ -18,7 +18,7 @@ void m_add(stack_t **h, unsigned int line_number)
 	}
 	if (stack_len < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*h);
