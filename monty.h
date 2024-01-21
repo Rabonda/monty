@@ -9,11 +9,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-/* Global variable */
-extern stack_t **global_free;
-
-
 /* macro variable */
 #define SEPARATOR " \n\t\r"
 
@@ -35,6 +30,9 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
+
+/* Global variable */
+extern stack_t **global_free;
 
 /**
  * struct instruction_s - A structor opcode and its function
