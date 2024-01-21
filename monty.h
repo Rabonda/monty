@@ -73,4 +73,6 @@ void m_pstr(stack_t **h, unsigned int line_number);
 void m_rotl(stack_t **h, unsigned int line_number);
 void m_rotr(stack_t **h, unsigned int line_number);
 
+void free_stack_t(stack_t *h);
+
 #endif /* MONTY_H*/
